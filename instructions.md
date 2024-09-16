@@ -9,7 +9,7 @@ Una API básica que permite consultar personajes de Rick and Morty con un filtro
 - [x] Crear una query `characters` que realice la búsqueda de personajes directamente en la API pública de Rick and Morty (sin base de datos).
 - [x] Implementar la lógica para filtrar personajes por nombre (búsqueda simple).
 - [x] Añadir un middleware que registre las solicitudes básicas en consola.
-- [ ] Documentar cómo ejecutar y usar la API.
+- [x] Documentar cómo ejecutar y usar la API.
 
 ### Resultado:
 

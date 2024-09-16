@@ -1,6 +1,7 @@
 import express from "express";
 import { graphqlHTTP } from "express-graphql";
 import { buildSchema } from "graphql";
+import { config } from "./config";
 
 // Middlewares
 import { logMiddleware } from "@/middlewares/logMiddleware";
@@ -94,6 +95,6 @@ app.use(
   })
 );
 
-app.listen(3000, () => {
+app.listen(config.PORT, () => {
   console.log("Server is running on z");
 });
