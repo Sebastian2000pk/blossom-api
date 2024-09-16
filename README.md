@@ -1,46 +1,33 @@
-# Plan de Desarrollo Backend
+# Rick and Morty GraphQL API with Express
 
-### Resultado:
+Este proyecto es un servidor Express que interactúa con la **API de Rick and Morty** usando GraphQL. Te permite realizar consultas de personajes basadas en filtros como nombre, estado, especie y género a través de un endpoint de GraphQL.
 
-Una API básica que permite consultar personajes de Rick and Morty con un filtro por nombre y registro de logs en consola.
+## Características
 
-- [x] Inicializar un proyecto con `Express` y `GraphQL`.
-- [x] Configurar GraphQL.
-- [x] Crear una query `characters` que realice la búsqueda de personajes directamente en la API pública de Rick and Morty (sin base de datos).
-- [x] Implementar la lógica para filtrar personajes por nombre (búsqueda simple).
-- [x] Añadir un middleware que registre las solicitudes básicas en consola.
-- [ ] Documentar cómo ejecutar y usar la API.
+- **API GraphQL**: Consulta personajes del universo de Rick y Morty.
+- **Filtros**: Búsqueda por nombre, estado, especie y género del personaje.
+- **GraphiQL**: Interfaz integrada de GraphiQL para probar consultas fácilmente.
+- **Middleware de Registro**: Captura y registra las solicitudes entrantes para facilitar la depuración.
 
-### Resultado:
+## Tecnologías
 
-La API ahora se conecta a una base de datos relacional, almacena los personajes, y permite consultas con múltiples filtros.
+- **Node.js**
+- **Express.js**
+- **GraphQL**
+- **TypeScript**
 
-- [ ] Configurar Sequelize con MySQL o PostgreSQL.
-- [ ] Crear migraciones y un modelo `Character` con los campos necesarios.
-- [ ] Añadir la funcionalidad para inicializar la base de datos con 15 personajes de la API de Rick and Morty.
-- [ ] Modificar la query `characters` para que los datos se obtengan de la base de datos en lugar de la API.
-- [ ] Agregar filtros avanzados por `Status`, `Species`, y `Gender` en la query `characters`.
-- [ ] Extender el middleware para registrar el método, ruta, y tiempo de ejecución de cada solicitud.
-- [ ] Actualizar la documentación para explicar la instalación de la base de datos y cómo inicializarla.
+## Requisitos
 
-### Resultado:
+- **Node.js**
+- **yarn**
 
-La API ahora almacena en caché los resultados de las consultas a Redis, mejorando el tiempo de respuesta para búsquedas repetidas.
+## Comenzando
 
-- [ ] Configurar Redis para el almacenamiento en caché.
-- [ ] Implementar la lógica en el resolver `characters` para buscar primero en caché antes de consultar la base de datos.
-- [ ] Agregar una funcionalidad para limpiar el caché cuando se actualicen los datos.
-- [ ] Optimizar la consulta para reducir el tiempo de ejecución y, opcionalmente, agregar un decorador que mida el tiempo de respuesta.
-- [ ] Mejorar el middleware para que registre más detalles de cada solicitud.
-- [ ] Actualizar la documentación para incluir instrucciones sobre cómo configurar Redis y el caché.
+Sigue estos pasos para configurar y ejecutar el proyecto localmente.
 
-### Resultado:
+### 1. Clonar el repositorio
 
-La API ahora cuenta con funcionalidades avanzadas como actualización periódica de personajes, soft delete, y pruebas unitarias, con una arquitectura sólida y eficiente.
-
-- [ ] Implementar un cron job que actualice los personajes cada 12 horas consultando la API pública de Rick and Morty.
-- [ ] Implementar soft delete en los personajes (eliminación lógica en lugar de eliminación física).
-- [ ] Implementar pruebas unitarias para la query `characters` utilizando Jest o Mocha.
-- [ ] (Opcional) Refactorizar el código para usar TypeScript en todo el backend.
-- [ ] (Opcional) Documentar la API utilizando Swagger.
-- [ ] Actualizar la documentación para reflejar todos los cambios y nuevas funcionalidades.
+```bash
+git clone https://github.com/Sebastian2000pk/blossom-api
+cd blossom-api
+```
