@@ -2,6 +2,9 @@ import express from "express";
 import { graphqlHTTP } from "express-graphql";
 import { buildSchema } from "graphql";
 
+// Middlewares
+import { logMiddleware } from "@/middlewares/logMiddleware";
+
 const app = express();
 
 // URL de la API de GraphQL de Rick and Morty
@@ -77,6 +80,10 @@ const root = {
     return await searchCharacters(name, status, species, gender);
   },
 };
+
+// Middlewares
+app.use(express.json());
+app.use(logMiddleware);
 
 app.use(
   "/graphql",
