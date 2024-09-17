@@ -7,7 +7,6 @@ export const characterServices = {
     species: string,
     gender: string
   ) => {
-    console.log("name", name);
     const query = `
       query {
         characters(filter: { name: "${name || ""}", status: "${

@@ -2,7 +2,7 @@ import express from "express";
 import { graphqlHTTP } from "express-graphql";
 import { buildSchema } from "graphql";
 import { config } from "./config";
-import { resolver } from "./graphql/resolvers";
+import { resolver } from "./graphql/resolver";
 
 // Middlewares
 import { logMiddleware } from "@/middlewares/logMiddleware";
