@@ -2,6 +2,7 @@ import express from "express";
 import { graphqlHTTP } from "express-graphql";
 import { buildSchema } from "graphql";
 import { config } from "./config";
+import { resolver } from "./graphql/resolvers";
 
 // Middlewares
 import { logMiddleware } from "@/middlewares/logMiddleware";
@@ -90,7 +91,8 @@ app.use(
   "/graphql",
   graphqlHTTP({
     schema: schema,
-    rootValue: root,
+    // rootValue: root,
+    rootValue: resolver,
     graphiql: true, // Habilitar GraphiQL para probar las consultas
   })
 );
