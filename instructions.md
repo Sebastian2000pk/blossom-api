@@ -15,7 +15,7 @@ Una API básica que permite consultar personajes de Rick and Morty con un filtro
 
 La API ahora se conecta a una base de datos relacional, almacena los personajes, y permite consultas con múltiples filtros.
 
-- [ ] Configurar Sequelize con MySQL o PostgreSQL.
+- [x] Configurar Sequelize con MySQL o PostgreSQL.
 - [ ] Crear migraciones y un modelo `Character` con los campos necesarios.
 - [ ] Añadir la funcionalidad para inicializar la base de datos con 15 personajes de la API de Rick and Morty.
 - [ ] Modificar la query `characters` para que los datos se obtengan de la base de datos en lugar de la API.
