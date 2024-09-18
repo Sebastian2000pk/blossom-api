@@ -57,3 +57,11 @@ Puedes probar la API usando la interfaz integrada de GraphiQL en:
 ```bash
 http://localhost:3000/graphql
 ```
+
+### 5. Inicializar base de datos
+
+Si tienes una base de datos nueva, puedes inicializarla con el comando
+
+```bash
+yarn init-db or npm run init-db
+```

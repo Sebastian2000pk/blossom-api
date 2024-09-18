@@ -1,5 +1,5 @@
 // Resolvers
-import { charactersResolver } from "./modules/characters/resolver";
+import { charactersResolver } from "./character";
 
 export const resolver = {
   ...charactersResolver,

@@ -17,11 +17,11 @@ La API ahora se conecta a una base de datos relacional, almacena los personajes,
 
 - [x] Configurar Sequelize con MySQL o PostgreSQL.
 - [x] Crear migraciones y un modelo `Character` con los campos necesarios.
-- [ ] Añadir la funcionalidad para inicializar la base de datos con 15 personajes de la API de Rick and Morty.
-- [ ] Modificar la query `characters` para que los datos se obtengan de la base de datos en lugar de la API.
-- [ ] Agregar filtros avanzados por `Status`, `Species`, y `Gender` en la query `characters`.
-- [ ] Extender el middleware para registrar el método, ruta, y tiempo de ejecución de cada solicitud.
-- [ ] Actualizar la documentación para explicar la instalación de la base de datos y cómo inicializarla.
+- [x] Añadir la funcionalidad para inicializar la base de datos con 15 personajes de la API de Rick and Morty.
+- [x] Modificar la query `characters` para que los datos se obtengan de la base de datos en lugar de la API.
+- [x] Agregar filtros avanzados por `Status`, `Species`, y `Gender` en la query `characters`.
+- [x] Extender el middleware para registrar el método, ruta, y tiempo de ejecución de cada solicitud.
+- [x] Actualizar la documentación para explicar la instalación de la base de datos y cómo inicializarla.
 
 ### Resultado:
 
