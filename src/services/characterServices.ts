@@ -1,42 +1,38 @@
-import { config } from "@/config";
+import { WhereOptions, Op } from "sequelize";
+import { CharacterModel } from "@/models/character";
+
+interface GetCharactersParams {
+  name?: string;
+  status?: boolean;
+  species?: string;
+  gender?: string;
+}
 
 export const characterServices = {
-  getAllCharacters: async (
-    name: string,
-    status: boolean,
-    species: string,
-    gender: string
-  ) => {
-    const query = `
-      query {
-        characters(filter: { name: "${name || ""}", status: "${
-      status || ""
-    }", species: "${species || ""}", gender: "${gender || ""}" }) {
-          results {
-            id
-            name
-            status
-            species
-            gender
-            origin {
-              name
-            }
-            location {
-              name
-            }
-            image
-          }
-        }
-      }
-    `;
+  getAllCharacters: async ({
+    name,
+    status,
+    species,
+    gender,
+  }: GetCharactersParams) => {
+    const where: WhereOptions<GetCharactersParams> = {};
 
-    const response = await fetch(config.GRAPHQL_API_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query }),
-    });
+    if (name) {
+      where.name = { [Op.like]: `%${name}%` }; // Búsqueda parcial con `LIKE`
+    }
 
-    const data: any = await response.json();
-    return data.data.characters.results;
+    if (status) {
+      where.status = status; // Filtrar por estado exacto
+    }
+
+    if (species) {
+      where.species = species; // Filtrar por especie exacta
+    }
+
+    if (gender) {
+      where.gender = gender; // Filtrar por género exacto
+    }
+
+    return await CharacterModel.findAll({ where });
   },
 };

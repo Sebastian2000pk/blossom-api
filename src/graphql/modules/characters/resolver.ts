@@ -2,12 +2,12 @@
 import { characterServices } from "@/services/characterServices";
 
 export const charactersResolver = {
-  characters: async ({ name, gender, status, specie }: any) => {
-    return await characterServices.getAllCharacters(
+  characters: async ({ name, gender, status, species }: any) => {
+    return await characterServices.getAllCharacters({
       name,
       status,
-      specie,
-      gender
-    );
+      species,
+      gender,
+    });
   },
 };
