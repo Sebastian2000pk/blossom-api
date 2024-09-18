@@ -1,9 +1,9 @@
 import { WhereOptions, Op } from "sequelize";
-import { CharacterModel } from "@/models/character";
+import CharacterModel from "@/models/character";
 
 interface GetCharactersParams {
   name?: string;
-  status?: boolean;
+  status?: string;
   species?: string;
   gender?: string;
 }
@@ -14,7 +14,7 @@ export const characterServices = {
     status,
     species,
     gender,
-  }: GetCharactersParams) => {
+  }: GetCharactersParams): Promise<any[]> => {
     const where: WhereOptions<GetCharactersParams> = {};
 
     if (name) {
@@ -34,5 +34,9 @@ export const characterServices = {
     }
 
     return await CharacterModel.findAll({ where });
+  },
+
+  getCharacterById: async (id: number): Promise<any> => {
+    return await CharacterModel.findByPk(id);
   },
 };

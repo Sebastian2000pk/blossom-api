@@ -1,8 +1,16 @@
+import { Model } from "sequelize";
 import { sequelize } from "@/database/config";
 import { DataTypes } from "sequelize";
+import type { Character } from "@/interfaces/character";
 
-export const CharacterModel = sequelize.define(
-  "character",
+class CharacterModel extends Model<Character> {
+  id: number;
+  name: string;
+  status: string;
+  species: string;
+}
+
+CharacterModel.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -31,7 +39,11 @@ export const CharacterModel = sequelize.define(
     },
   },
   {
+    sequelize,
+    modelName: "Character",
     timestamps: false,
     tableName: "characters",
   }
 );
+
+export default CharacterModel;

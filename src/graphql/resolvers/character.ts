@@ -1,4 +1,3 @@
-// Services
 import { characterServices } from "@/services/characterServices";
 
 export const charactersResolver = {
