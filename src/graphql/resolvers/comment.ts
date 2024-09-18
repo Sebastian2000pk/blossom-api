@@ -1,12 +1,14 @@
+import { commentServices } from "@/services/commentServices";
+
 export const commentResolver = {
   Query: {
     comments: async ({ characterId }: any) => {
-      return await [characterId];
+      return await commentServices.getAllComments(characterId);
     },
   },
   Mutation: {
     createComment: async ({ content, characterId }: any) => {
-      return await { content, characterId };
+      return await commentServices.createComment({ content, characterId });
     },
   },
 };

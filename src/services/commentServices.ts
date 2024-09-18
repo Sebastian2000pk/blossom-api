@@ -5,4 +5,7 @@ export const commentServices = {
   getAllComments: async (characterId: number): Promise<Comment[]> => {
     return await CommentModel.findAll({ where: { characterId } });
   },
+  createComment: async (comment: Comment): Promise<Comment> => {
+    return await CommentModel.create(comment);
+  },
 };

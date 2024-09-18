@@ -1,4 +1,5 @@
-export const characterSchema = `type Character {
+export const characterSchema = `
+type Character {
   id: ID!
   name: String!
   status: String!
@@ -6,7 +7,4 @@ export const characterSchema = `type Character {
   gender: String!
   image: String!
 }
-
-type Query {
-  characters(name: String, status: String, species: String, gender: String): [Character]!
-}`;
+`;
