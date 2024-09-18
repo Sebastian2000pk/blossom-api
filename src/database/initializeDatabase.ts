@@ -1,6 +1,6 @@
 import axios from "axios";
 import { sequelize } from "./config";
-import { CharacterModel } from "@/models/character";
+import CharacterModel from "@/models/character";
 import { config } from "@/config";
 import { Character } from "../interfaces/character";
 
