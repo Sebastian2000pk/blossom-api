@@ -37,20 +37,35 @@ cd blossom-api
 Asegúrate de tener Node.js y npm instalados en tu máquina. Ejecuta el siguiente comando para instalar las dependencias necesarias:
 
 ```bash
-yarn install or npm install
+yarn install
+# o, si usas npm:
+npm install
 ```
 
-### 3. Iniciar el servidor
+### 3. Configurar variables de entorno
+
+Antes de iniciar el servidor, asegúrate de tener configuradas las variables de entorno necesarias. Crea un archivo `.env` en la raíz del proyecto con la configuración de tu base de datos y cualquier otra clave necesaria. Un ejemplo de configuración básica podría ser:
+
+```env
+DB_HOST=localhost
+DB_USER=tu_usuario
+DB_PASSWORD=tu_contraseña
+DB_NAME=rick_and_morty
+```
+
+### 4. Iniciar el servidor
 
 Una vez que las dependencias estén instaladas, puedes iniciar el servidor:
 
 ```bash
-yarn or npm start
+yarn start
+# o, si usas npm:
+npm start
 ```
 
 Por defecto, el servidor se ejecutará en http://localhost:3000.
 
-### 4. GraphQL Playground
+### 5. GraphQL Playground
 
 Puedes probar la API usando la interfaz integrada de GraphiQL en:
 
@@ -58,10 +73,14 @@ Puedes probar la API usando la interfaz integrada de GraphiQL en:
 http://localhost:3000/graphql
 ```
 
-### 5. Inicializar base de datos
+### 6. Inicializar base de datos
 
-Si tienes una base de datos nueva, puedes inicializarla con el comando
+Si necesitas inicializar una base de datos nueva, utiliza el siguiente comando:
 
 ```bash
-yarn init-db or npm run init-db
+yarn init-db
+# o, si usas npm:
+npm run init-db
 ```
+
+> Nota: Asegúrate de haber configurado correctamente las variables de entorno para la conexión con la base de datos antes de ejecutar este comando.
