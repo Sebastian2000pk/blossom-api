@@ -1,7 +1,7 @@
 import { sequelize } from "@/database/config";
 import { DataTypes } from "sequelize";
 
-export const Character = sequelize.define(
+export const CharacterModel = sequelize.define(
   "character",
   {
     id: {

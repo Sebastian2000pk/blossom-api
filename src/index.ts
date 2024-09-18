@@ -9,9 +9,6 @@ import { logMiddleware } from "@/middlewares/logMiddleware";
 
 const app = express();
 
-// URL de la API de GraphQL de Rick and Morty
-const GRAPHQL_API_URL = "https://rickandmortyapi.com/graphql";
-
 // Definir el esquema de GraphQL
 const schema = buildSchema(`
   type Query {
@@ -36,52 +33,6 @@ const schema = buildSchema(`
     url: String
   }
 `);
-
-async function searchCharacters(
-  name: string,
-  status: boolean,
-  species: string,
-  gender: string
-) {
-  const query = `
-    query {
-      characters(filter: { name: "${name || ""}", status: "${
-    status || ""
-  }", species: "${species || ""}", gender: "${gender || ""}" }) {
-        results {
-          id
-          name
-          status
-          species
-          gender
-          origin {
-            name
-          }
-          location {
-            name
-          }
-          image
-        }
-      }
-    }
-  `;
-
-  const response = await fetch(GRAPHQL_API_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ query }),
-  });
-
-  const data = await response.json();
-  return data.data.characters.results;
-}
-
-const root = {
-  // Resolver para buscar personajes con filtros
-  characters: async ({ name, status, species, gender }: any) => {
-    return await searchCharacters(name, status, species, gender);
-  },
-};
 
 // Middlewares
 app.use(express.json());

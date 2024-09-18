@@ -1,6 +1,10 @@
+import { config as dotenv } from "dotenv";
+dotenv();
+
 export const config = {
   PORT: process.env.PORT || 3000,
   GRAPHQL_API_URL: "https://rickandmortyapi.com/graphql",
+  RICK_AND_MORTY_API: "https://rickandmortyapi.com/api",
 };
 
 export const databaseConfig = {

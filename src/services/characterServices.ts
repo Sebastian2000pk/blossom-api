@@ -36,7 +36,7 @@ export const characterServices = {
       body: JSON.stringify({ query }),
     });
 
-    const data = await response.json();
+    const data: any = await response.json();
     return data.data.characters.results;
   },
 };
