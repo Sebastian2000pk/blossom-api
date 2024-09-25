@@ -51,6 +51,11 @@ DB_HOST=localhost
 DB_USER=tu_usuario
 DB_PASSWORD=tu_contraseña
 DB_NAME=rick_and_morty
+
+REDIS_HOST=host
+REDIS_PASSWORD=password
+REDIS_PORT=port
+REDIS_AVAILABLE=true
 ```
 
 ### 4. Iniciar el servidor
