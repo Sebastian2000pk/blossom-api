@@ -13,7 +13,9 @@ export const config = {
 
 export const redisConfig = {
   REDIS_HOST: process.env.REDIS_HOST || "",
+  REDIS_PORT: parseInt(process.env.REDIS_PORT || "6379"),
   REDIS_PASSWORD: process.env.REDIS_PASSWORD || "",
+  REDIS_AVAILABLE: process.env.REDIS_AVAILABLE === "true",
 };
 
 export const databaseConfig = {

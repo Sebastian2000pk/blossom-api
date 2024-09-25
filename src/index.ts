@@ -2,8 +2,8 @@ import express from "express";
 import cors from "cors";
 import { graphqlHTTP } from "express-graphql";
 import { config } from "./config";
-import { resolver } from "./graphql/resolvers";
-import { schema } from "./graphql/schemas";
+import { resolver } from "./graph-ql/resolvers";
+import { schema } from "./graph-ql/schemas";
 
 // Middlewares
 import { logMiddleware } from "@/middlewares/logMiddleware";

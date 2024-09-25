@@ -1,7 +1,11 @@
 import crypto from "crypto";
 import { client, connectRedis } from "../cache/index";
+import { redisConfig } from "@/config";
 
 export const cacheMiddleware = async (req, res, next) => {
+  if (!redisConfig.REDIS_AVAILABLE) {
+    return next();
+  }
   const { query, variables } = req.body;
   const cacheKey = generateCacheKey(query, variables);
   try {
@@ -25,6 +29,10 @@ const generateCacheKey = (query, variables) => {
 };
 
 export const cacheStoreMiddleware = async (req, res, next) => {
+  if (!redisConfig.REDIS_AVAILABLE) {
+    return next();
+  }
+  
   const { query, variables } = req.body;
   const cacheKey = generateCacheKey(query, variables);
   const originalSend = res.send.bind(res);

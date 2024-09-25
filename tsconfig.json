@@ -13,7 +13,8 @@
     "pretty": true,
     "sourceMap": true,
     "declaration": true,
-    "outDir": "dist",
+    "outDir": "./dist",
+    "rootDir": "./src",
     "allowJs": true,
     "noEmit": false,
     "esModuleInterop": true,
@@ -24,6 +25,6 @@
       "@/*": ["*"],
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.json", ".env", "src/tests/**/*.ts"],
+  "include": ["src/**/*.ts", "src/**/*.json", "src/tests/**/*.ts"],
   "exclude": ["node_modules"]
 }
