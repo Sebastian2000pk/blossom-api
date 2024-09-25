@@ -11,6 +11,11 @@ export const config = {
   FIREBASE_CLIENT_EMAIL: process.env.FIREBASE_CLIENT_EMAIL || "",
 };
 
+export const redisConfig = {
+  REDIS_HOST: process.env.REDIS_HOST || "",
+  REDIS_PASSWORD: process.env.REDIS_PASSWORD || "",
+};
+
 export const databaseConfig = {
   user: process.env.DB_USER || "",
   password: process.env.DB_PASSWORD || "",

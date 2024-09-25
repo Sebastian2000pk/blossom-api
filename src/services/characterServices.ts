@@ -32,6 +32,7 @@ export const characterServices = {
     if (gender) {
       where.gender = gender; // Filtrar por género exacto
     }
+    console.log("🥑 ~ where:--------------------------------------------------->")
 
     return await CharacterModel.findAll({ where });
   },

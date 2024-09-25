@@ -9,4 +9,7 @@ export const charactersResolver = {
       gender,
     });
   },
+  character: async ({ id }: any) => {
+    return await characterServices.getCharacterById(id);
+  },
 };
