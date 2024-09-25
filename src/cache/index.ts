@@ -10,7 +10,6 @@ const client = createClient({
     port: 6379,
     tls: false,
   },
-  // password: "PtFLRh22YHlJO2IdXq1df4uy9RP1QyiDrAzCaObbadk=",
   // password: redisConfig.REDIS_PASSWORD,
 });
 
